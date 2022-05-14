@@ -1,0 +1,37 @@
+{
+    "name": "complete-aws-solution-dev",
+    "build": {
+        "dockerfile": "Dockerfile",
+    },
+    "runArgs": [
+        "--env-file",
+        "complete-aws-solution-dev.env",
+    ],
+    "extensions": [
+        "HashiCorp.terraform",
+    ],
+    "settings": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.enablePreviewFromQuickOpen": false,
+        "terraform.languageServer": {
+            "external": true,
+            "args": [
+                "serve"
+            ]
+        },
+        "terraform-ls.experimentalFeatures": {
+            "validateOnSave": true
+        },
+        "[terraform]": {
+            "editor.formatOnSave": true
+        }
+    },
+    "initializeCommand": "aws-vault exec complete-aws-solution-dev -- env | grep AWS > complete-aws-solution-dev.env",
+    "waitFor": "initializeCommand",
+    "postCreateCommand": "rm complete-aws-solution-dev.env",
+}
