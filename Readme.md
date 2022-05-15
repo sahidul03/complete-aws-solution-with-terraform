@@ -4,12 +4,12 @@
 
 1. Update profile name in [dev/.devcontainer/devcontainer.json].
   
-    `aws-vault exec dark-store-dev ...` → `aws-vault exec $your-profile-name ...`
+    `aws-vault exec complete-aws-solution-dev ...` → `aws-vault exec $your-profile-name ...`
 
     ```
     {
       ...
-      "initializeCommand": "aws-vault exec dark-store-dev -- env | grep AWS > dark-store-dev.env",
+      "initializeCommand": "aws-vault exec complete-aws-solution-dev -- env | grep AWS > complete-aws-solution-dev.env",
       ..
     }
     ```
