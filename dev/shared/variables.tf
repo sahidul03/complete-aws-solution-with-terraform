@@ -1,6 +1,6 @@
 variable "namespace" {
   type    = string
-  default = "complete-aws-solution"
+  default = "cas" # cas is the shortform of complete-aws-solution
 }
 
 variable "stage" {
