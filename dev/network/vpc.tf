@@ -1,3 +1,6 @@
-resource "aws_vpc" "cas_vpc" {
+resource "aws_vpc" "main_vpc" {
   cidr_block = var.vpc.cidr_block
+
+  enable_dns_support = true
+  enable_dns_hostnames = true
 }
