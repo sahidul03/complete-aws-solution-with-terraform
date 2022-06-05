@@ -23,6 +23,9 @@ output "network" {
       basition = {
         id = aws_security_group.basition.id
       }
+      rds = {
+        id = aws_security_group.rds.id
+      }
     }
     eip = {
       nat_1a = {
